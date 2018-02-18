@@ -4,7 +4,7 @@
 #include <avr/sleep.h>
 #define 	F_CPU   8000000UL
 #include <util/delay.h>
-
+#include <utility>
 
 int main (void)
 {
@@ -13,11 +13,10 @@ int main (void)
     while(true)
     {
         PORTC = ~out;
-		_delay_ms(1000);
+        _delay_ms(1000);
         out <<= 1;
         if(out == 0)
-        	out = 0x1;
-
+            out = 0x1;
     }
     return (0);
 }
