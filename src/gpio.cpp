@@ -13,7 +13,7 @@ int main (void)
     while(true)
     {
         PORTC = ~out;
-    	_delay_ms(100);
+		_delay_ms(1000);
         out <<= 1;
         if(out == 0)
         	out = 0x1;
