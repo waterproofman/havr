@@ -1,3 +1,6 @@
+namespace havr
+{
+
 class Uart
 {
 public:
@@ -5,3 +8,5 @@ public:
     void send(uint8_t byte);
     uint8_t receive();
 };
+
+}

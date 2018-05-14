@@ -9,7 +9,7 @@
 
 int main (void)
 {
-    Uart uart;
+    havr::Uart uart;
     uart.configure();
 
 	DDRC = 0xFF;

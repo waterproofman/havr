@@ -2,11 +2,22 @@
 #include <avr/io.h>
 #include "uart.hpp"
 
+namespace havr
+{
+
+namespace
+{
+    void rxIsr()
+    {
+    }
+
+    void txIsr()
+    {
+    }
+}
+
 void Uart::configure()
 {
-    DDRC = 0xFF;
-    uint8_t out = 0x01;
-
     UBRR1L = 51;
     UCSR1B |= 1<<3;
 }
@@ -21,3 +32,4 @@ uint8_t Uart::receive()
     return 'n';
 }
 
+}
