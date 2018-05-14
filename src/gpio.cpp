@@ -5,17 +5,18 @@
 #define 	F_CPU   8000000UL
 #include <util/delay.h>
 
+#include "uart.hpp"
+
 int main (void)
 {
+    Uart uart;
+    uart.configure();
+
 	DDRC = 0xFF;
 	uint8_t out = 0x01;
-
-    UBRR1L = 51;
-    UCSR1B |= 1<<3;
-
     while(true)
     {
-        UDR1 = 'o';
+        uart.send('r');
         PORTC = ~out;
         _delay_ms(1000);
         out <<= 1;
