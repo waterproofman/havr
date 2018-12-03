@@ -11,12 +11,13 @@ namespace havr
 
 namespace
 {
-    ISR(USART1_TX_vect)
+    extern "C" void USART1_TX_vect(void) __attribute__ ((signal));
+    void USART1_TX_vect(void)
     {
         static bool once = false;
         if(!once)
         {
-            UDR1 = 'i';
+            UDR1 = 'a';
             once = true;
         }
         else
