@@ -20,8 +20,8 @@ int main (void)
         _delay_ms(1000);
         uart.send('#');
         _delay_ms(1000);
+
         PORTC = ~out;
-        _delay_ms(1000);
         out <<= 1;
         if(out == 0)
             out = 0x1;
