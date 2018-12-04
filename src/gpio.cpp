@@ -16,7 +16,10 @@ int main (void)
 	uint8_t out = 0x01;
     while(true)
     {
-        uart.send('r');
+        uart.send("Ala",3);
+        _delay_ms(1000);
+        uart.send('#');
+        _delay_ms(1000);
         PORTC = ~out;
         _delay_ms(1000);
         out <<= 1;
